@@ -73,17 +73,3 @@ var frshlib = (function(){
     };
 
 })();
-
-// (function(window) {
-
-//     function frshlib() {
-//         var _frshlib = {};
-//         return _frshlib;
-//     }
-
-//     if(typeof(window.frshlib) === 'undefined') {
-//         window.frshlib = frshlib();
-//     }
-
-
-// })(window);
