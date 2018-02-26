@@ -2,6 +2,9 @@
  * Frshlib: funções básicas para consumir métodos da API do Freshdesk
  * A ideia é criar essa lib para não precisar reescrever código a cada
  * app criado para o Freshdesk 😎
+ * Made by Marcelo Araujo
+ * Twitter: @m_araujo01
+ * 
 */
 
 var frshlib = (function(){
@@ -40,6 +43,18 @@ var frshlib = (function(){
             var _this = this;
             var url = _this.freshDeskUrl + "/api/v2/tickets";
             return _this._callPromise(url, "GET");
+        },
+
+        updateTicket: function(idTicket, ticketData) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/tickets/" + idTicket;
+            return _this._callPromise(url, "PUT", ticketData);
+        },
+
+        deleteTicket: function(idTicket) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/tickets/" + idTicket;
+            return _this._callPromise(url, "DELETE");
         },
 
         _callPromise: function(url, method, data) {
