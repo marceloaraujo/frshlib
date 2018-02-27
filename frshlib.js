@@ -22,8 +22,6 @@ var frshlib = (function(){
         },
 
         validateFreshdeskInfos: function() {
-            console.log(this.freshDeskUrl);
-            console.log(this.freshDeskKey);
             if((this.freshDeskUrl === "" || this.freshDeskUrl == undefined) ||
                (this.freshDeskKey === "") || this.freshDeskKey == undefined) {
                    return false;
