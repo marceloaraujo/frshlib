@@ -1,5 +1,5 @@
 # frshlib
-A simple JavaScript library to use the FreshDesk API's methods.
+A simple JavaScript library to use the Freshdesk API's methods.
 
 If you want to use this library in Freshdesk App Development Platform V1, follow these steps:
 * Add this library in the ***assets*** folder;
