@@ -24,5 +24,3 @@ frshlib.createTicket(ticketData);
 
 To use this lib outside Freshdesk project, you need to download ***jQuery***.
 
-
-(Documentation soon!!)
