@@ -119,6 +119,27 @@ var frshlib = (function(){
             return _this._callPromise(url, "DELETE");
         },
 
+        //TODO: add other functions above here and organize these functions below
+        /**
+         * View a contact by id
+         * @author Marcelo Araujo
+         */
+        viewContact: function(idContact) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/contacts/" + idContact;
+            return _this._callPromise(url, "GET");
+        },
+
+        /**
+         * View a company by id
+         * @author Marcelo Araujo
+         */
+        viewCompany: function(idCompany) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/companies/" + idCompany;
+            return _this._callPromise(url, "GET");
+        },
+
         /**
          * Generic function to call API by URL.
          * This function is used in all functions above
