@@ -17,7 +17,7 @@ If you want to use this libary in Freshdesk App Development Platform V2, follow 
 ```html
 <script src="library/frshlib.js"></script>
 ```
-*Then, use ***frshlib*** variable:
+* Then, use ***frshlib*** variable:
 ```javascript
 frshlib.createTicket(ticketData);
 ```
