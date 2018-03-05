@@ -22,5 +22,7 @@ If you want to use this libary in Freshdesk App Development Platform V2, follow 
 frshlib.createTicket(ticketData);
 ```
 
+To use this lib outside Freshdesk project, you need to download ***jQuery***.
+
 
 (Documentation soon!!)
