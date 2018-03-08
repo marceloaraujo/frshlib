@@ -22,8 +22,8 @@ var frshlib = (function(){
         },
 
         validateFreshdeskInfos: function() {
-            if((this.freshDeskUrl === "" || this.freshDeskUrl == undefined) ||
-               (this.freshDeskKey === "") || this.freshDeskKey == undefined) {
+            if(this.freshDeskUrl === "" || this.freshDeskUrl == undefined ||
+               this.freshDeskKey === "" || this.freshDeskKey == undefined) {
                    return false;
             }
             return true;
