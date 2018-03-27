@@ -11,7 +11,7 @@ If you want to use this library in Freshdesk App Development Platform V1, follow
 ```javascript
 frshlib.createTicket(ticketData);
 ```
-If you want to use this libary in Freshdesk App Development Platform V2, follow these steps:
+If you want to use this library in Freshdesk App Development Platform V2, follow these steps:
 * Create a folder called ***library*** into ***app*** folder and move this lib inside it
 * Import ***frshlib.js*** in ***template.html*** file:
 ```html
