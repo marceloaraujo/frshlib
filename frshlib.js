@@ -212,6 +212,18 @@ var frshlib = (function(){
         },
 
         /**
+         * List all time entries by ticket.
+         * @param idTicket
+         * @method GET
+         * @author Marcelo Araujo
+         */
+        listTimeEntriesByTicket: function(idTicket) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/tickets/" + idTicket + "/time_entries";
+            return _this._callPromise(url, "GET");
+        },
+
+        /**
          * View a company by id
          * @author Marcelo Araujo
          */
