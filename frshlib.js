@@ -31,6 +31,7 @@ var frshlib = (function(){
 
         /**
          * Create a ticket in Freshdesk
+         * @method POST
          * @author Marcelo Araujo
          */
         createTicket: function(ticketData) {
@@ -41,6 +42,7 @@ var frshlib = (function(){
 
         /**
          * View a ticket by id
+         * @method GET
          * @author Marcelo Araujo
          */
         viewTicket: function(idTicket) {
@@ -51,6 +53,7 @@ var frshlib = (function(){
 
         /**
          * View all tickets
+         * @method GET
          * @author Marcelo Araujo
          */
         viewAllTickets: function() {
@@ -61,6 +64,7 @@ var frshlib = (function(){
 
         /**
          * Update a ticket by id
+         * @method PUT
          * @author Marcelo Araujo
          */
         updateTicket: function(idTicket, ticketData) {
@@ -71,6 +75,7 @@ var frshlib = (function(){
 
         /**
          * Delete a ticket by id
+         * @method DELETE
          * @author Marcelo Araujo
          */
         deleteTicket: function(idTicket) {
@@ -81,6 +86,7 @@ var frshlib = (function(){
 
         /**
          * Create a reply in ticket
+         * @method POST
          * @author Marcelo Araujo
          */
         createReply: function(idTicket, replyData) {
@@ -91,6 +97,7 @@ var frshlib = (function(){
 
         /**
          * Create a note in ticket
+         * @method POST
          * @author Marcelo Araujo
          */
         createNote: function(idTicket, noteData) {
@@ -101,6 +108,7 @@ var frshlib = (function(){
 
         /**
          * Update a note by id
+         * @method PUT
          * @author Marcelo Araujo
          */
         updateConversation: function(idNote, noteData) {
@@ -111,12 +119,24 @@ var frshlib = (function(){
 
         /**
          * Delete a conversation by id
+         * @method DELETE
          * @author Marcelo Araujo
          */
         deleteConversation: function(idConversation) {
             var _this = this;
             var url = _this.freshDeskUrl + "/api/v2/conversations/" + idConversation;
             return _this._callPromise(url, "DELETE");
+        },
+
+        /**
+         * Create a contact
+         * @method POST
+         * @author Marcelo Araujo
+         */
+        createContact: function(contactData) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/contacts";
+            return _this._callPromise(url, "POST", contactData);
         },
 
         //TODO: add other functions above here and organize these functions below
@@ -128,6 +148,67 @@ var frshlib = (function(){
             var _this = this;
             var url = _this.freshDeskUrl + "/api/v2/contacts/" + idContact;
             return _this._callPromise(url, "GET");
+        },
+
+        /**
+         * List all contacts
+         * @method GET
+         * @author Marcelo Araujo
+         */
+        listAllContacts: function() {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/contacts";
+            return _this._callPromise(url, "GET");
+        },
+
+        /**
+         * Filter contacts by filter.
+         * @param filter: The name of filter that you'll use. (email, mobile, phone, etc...)
+         * @param value: The value of filter.
+         * @method GET
+         * @author Marcelo Araujo
+         */
+        listContactsByFilter: function(filter, value) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/contacts?" + filter + "=" + value;
+            return _this._callPromise(url, "GET");
+        },
+
+        /**
+         * Update a contact
+         * @param idContact: The contact id that you want to update
+         * @param contactData: The data of contact that you want to update
+         * @method PUT
+         * @author Marcelo Araujo
+         */
+        updateContact: function (idContact, contactData) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/contacts/" + idContact;
+            return _this._callPromise(url, "PUT", contactData);
+        },
+
+        /**
+         * Delete a contact
+         * @param idContact: The contact id that you want to delete
+         * @method DELETE
+         * @author Marcelo Araujo
+         */
+        deleteContact: function(idContact) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/contacts/" + idContact;
+            return _this._callPromise(url, "DELETE");
+        },
+
+        /**
+         * Make agent
+         * @param idContact
+         * @method PUT
+         * @author Marcelo Araujo
+         */
+        makeAgent: function(idContact) {
+            var _this = this;
+            var url = _this.freshDeskUrl + "/api/v2/contacts/" + idContact + "/make_agent";
+            return _this._callPromise(url, "PUT");
         },
 
         /**
