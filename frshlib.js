@@ -225,6 +225,8 @@ var frshlib = (function(){
 
         /**
          * View a company by id
+         * @param idCompany
+         * @method GET
          * @author Marcelo Araujo
          */
         viewCompany: function(idCompany) {
